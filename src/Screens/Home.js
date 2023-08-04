@@ -15,7 +15,7 @@ function Home() {
         >
           <img src="..." className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title">Card Title</h5>
             <p className="card-text">this is important text</p>
             <div className="container w-100 text-light">
               <select className="m-2 h-100 bg-success text-light">
