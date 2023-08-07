@@ -8,7 +8,7 @@ function Card() {
           className="card bg-dark text-light"
           style={{ width: "18rem", maxHeight: "360px" }}
         >
-          <img src="..." className="card-img-top" alt="..." />
+          <img src={require("../../assets/pexels-ash-376464.jpg")} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Card Title</h5>
             <p className="card-text">this is important text</p>
