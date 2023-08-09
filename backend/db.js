@@ -37,14 +37,21 @@ const mongoDB = async () => {
 
     const fetched_data = mongoose.connection.collection("food_items");
     const data = await fetched_data.find({}).toArray();
-    // console.log("Fetched data:", data);
+
+    const foodCatagory = mongoose.connection.collection("foodCatagory")
+    const dataCategory = await foodCatagory.find({}).toArray();
+
+    global.good_items = data
+    global.foodCatagoryData = dataCategory
+    // console.log(global.good_items,"==>");
+    // console.log("Fetched data:", data); 
+
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
   } 
 };
 
 module.exports = mongoDB;
-
 
 
 // ===========================================

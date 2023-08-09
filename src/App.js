@@ -5,14 +5,16 @@ import LogIn from "./Screens/LogIn";
 // import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark-5.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+import SignUp from "./Screens/SignUp";
 
 function App() {
   return (
-    <div>
+    <div >
       {" "}
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="/login" element={<LogIn />}/>
+        <Route path="/signup" element={<SignUp />}/>
       </Routes>
     </div>
   );
