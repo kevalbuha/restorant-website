@@ -158,15 +158,13 @@ function Home() {
                             className="col-12 col-md-6 col-lg-3"
                           >
                             {
-                              <div>
-                                {console.log(filterItems, "filterItems")}
-                                <Card
-                                  foodItem={filterItems}
-                                  // foodName={filterItems.name}
-                                  options={filterItems.options[0]}
-                                  // imgSrc={filterItems.img}
-                                />
-                              </div>
+                              <Card
+                                foodItem={filterItems}
+                                // foodName={filterItems.name}
+                                options={filterItems.options[0]}
+                                // imgSrc={filterItems.img}
+                              />
+                              // {console.log(filterItems,"filterItems")}
                             }
                           </div>
                         </>

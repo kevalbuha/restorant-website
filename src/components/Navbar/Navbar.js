@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Model from "../../model/Model";
+import Cart from "../../Screens/Cart";
+import { useCart } from "../ContextReducer/ContextReducer";
 
 function Navbar() {
+  const [cartView, setCartView] = useState(false);
   const navigate = useNavigate();
   const handleLogOut = () => {
     localStorage.removeItem("authtoken");
     navigate("/login");
   };
+  let data = useCart();
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-success">
@@ -37,7 +42,7 @@ function Navbar() {
                 </Link>
               </li>
               {localStorage.getItem("authtoken") ? (
-                <li className="nav-item">
+              <li className="nav-item">
                   <Link
                     className="nav-link active fs-5"
                     aria-current="page"
@@ -62,7 +67,13 @@ function Navbar() {
               </div>
             ) : (
               <div className="d-flex gap-2">
-                <div className="btn bg-white text-success mx-r">Cart<span className="badge badge-danger ml-2">4</span></div>
+                <div
+                  className="btn bg-white text-success mx-r"
+                  onClick={() => setCartView(true)}
+                >
+                  Cart<span className="badge badge-danger ml-2">{data.length}</span>
+                </div>
+                {cartView ? <Model onClose={()=>{setCartView(false)}}><Cart/></Model> : null}
                 <div
                   className="btn bg-white text-success mx-r"
                   onClick={handleLogOut}
