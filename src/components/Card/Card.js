@@ -12,6 +12,34 @@ function Card(props) {
   const [size, setSize] = useState("");
 
   const handleAddCart = async (e) => {
+    let food = [];
+    for (const item of data) {
+      if (item.id === props.foodItem._id) {
+        food = item;
+
+        break;
+      }
+    }
+    if (food !== []) {
+      if (food.size === size) {
+        await dispatch({
+          type: "UPDATE",
+          id: props.foodItem._id,
+          price: finalPrice,
+          qty: qty,
+        });
+        return;
+      } else if (food.size !== size) {
+        await dispatch({
+          type: "ADD",
+          id: props.foodItem._id,
+          name: props.foodItem.name,
+          price: finalPrice,
+          qty: qty,
+          size: size,
+        });
+        return;
+      }
     await dispatch({
       type: "ADD",
       id: props.foodItem._id,
@@ -20,17 +48,19 @@ function Card(props) {
       qty: qty,
       size: size,
     });
-    await console.log("data ", data);
+      return;
+      // await console.log("data ", data);
+    }
   };
-
   let finalPrice = qty * parseInt(options[size]);
-
+  
   useEffect(() => {
     setSize(priceRef.current.value);
   }, []);
+
   return (
     <div>
-      <div className="mt-3 p-4 bg-dark text-light">
+         <div className="mt-3 p-4 bg-dark text-light">
         <div className="card bg-dark text-light" style={{ width: "18.6rem" }}>
           <img
             src={props.foodItem.img}
