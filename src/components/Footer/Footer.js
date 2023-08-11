@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div>
-      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark text-light">
+    <div className="text-white">
+      <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top bg-dark text-light">
         <div className="col-md-4 d-flex align-items-center">
           <Link
             to="/"
@@ -14,7 +14,7 @@ function Footer() {
               <use href="#bootstrap"></use>
             </svg>
           </Link>
-          <span className="mb-3 mb-md-0 text-muted">© 2022 GoFood, Inc</span>
+          <span className="text-white">© 2022 GoFood, Inc</span>
         </div>
       </footer>
     </div>
