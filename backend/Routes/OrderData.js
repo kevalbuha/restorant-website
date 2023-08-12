@@ -40,4 +40,15 @@ router.post('/orderData', async (req, res) => {
     }
 })
 
+router.post('/myOrderData', async (req, res) => {
+    try {
+        const myData =await Order.findOne({'emial':req.body.email})
+        res.json({orderData:myData})
+    } catch (error) {
+        res.send("Server Error", error.message)
+
+    }
+})
+
+
 module.exports = router;

@@ -6,6 +6,7 @@ import LogIn from "./Screens/LogIn";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 import SignUp from "./Screens/SignUp";
+import MyOrder from "./Screens/MyOrder";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         )} */}
         <Route path="/login" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/myOrder" element={<MyOrder />} />
       </Routes>
     </div>
   );
