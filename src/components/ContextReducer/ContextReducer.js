@@ -32,11 +32,19 @@ const reducer = (state, action) => {
             parseInt(action.qty),
             action.price + food.price
           );
-          arr[index]={...food,qty:parseInt(action.qty)+ food.qty ,price:action.price + food.price}
+          arr[index] = {
+            ...food,
+            qty: parseInt(action.qty) + food.qty,
+            price: action.price + food.price,
+          };
         }
-        return arr
+        return arr;
       });
-      return arr
+      return arr;
+
+    case "DROP":
+      let empArray = [];
+      return empArray;
 
     default:
       console.log("Error in reducer");
